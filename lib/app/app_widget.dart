@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todolist_provider/app/core/ui/todo_list_ui_config.dart';
-import 'package:todolist_provider/app/models/auth/auth_module.dart';
+import 'package:todolist_provider/app/modules/auth_module.dart';
 import 'package:todolist_provider/app/modules/splash/splash_page.dart';
 import 'package:todolist_provider/app/sqlite_adm_connection.dart';
 

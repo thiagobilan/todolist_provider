@@ -34,7 +34,7 @@ class TodoListField extends StatelessWidget {
           decoration: InputDecoration(
             isDense: true,
             labelText: label,
-            suffixIcon: this.suffixIconButton ??
+            suffixIcon: suffixIconButton ??
                 (obscureText == true
                     ? IconButton(
                         icon: Icon(
