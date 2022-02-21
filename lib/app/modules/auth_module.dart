@@ -9,10 +9,12 @@ class AuthModule extends TodoListModule {
   AuthModule()
       : super(bindinds: [
           ChangeNotifierProvider(
-            create: (context) => LoginController(),
+            create: (context) => LoginController(userService: context.read()),
           ),
           ChangeNotifierProvider(
-            create: (context) => RegisterController(),
+            create: (context) => RegisterController(
+              userService: context.read(),
+            ),
           ),
         ], router: {
           '/login': (context) => const LoginPage(),

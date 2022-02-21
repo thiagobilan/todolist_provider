@@ -4,7 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 class TodoListUiConfig {
   TodoListUiConfig._();
   static ThemeData get theme => ThemeData(
-        textTheme: GoogleFonts.mandaliTextTheme(),
+        // textTheme: GoogleFonts.latoTextTheme(),
+        // textTheme: GoogleFonts.mandaliTextTheme(),
+        // textTheme: GoogleFonts.robotoTextTheme(),
+        textTheme: GoogleFonts.gideonRomanTextTheme(),
         primaryColor: const Color(0xff5c77ce),
         primaryColorLight: const Color(0xffabc8f7),
         elevatedButtonTheme: ElevatedButtonThemeData(
