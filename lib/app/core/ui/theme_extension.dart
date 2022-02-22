@@ -6,5 +6,5 @@ extension ThemeExtension on BuildContext {
   TextTheme get textTheme => Theme.of(this).textTheme;
 
   TextStyle get titleStyle => const TextStyle(
-      fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey);
+      fontSize: 13, fontWeight: FontWeight.bold, color: Colors.grey);
 }

@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:todolist_provider/app/app_widget.dart';
 import 'package:todolist_provider/app/core/auth/auth_provider.dart';
 import 'package:todolist_provider/app/core/database/sqlite_connection_factory.dart';
-import 'package:todolist_provider/app/repositories/user/user_repository.dart';
-import 'package:todolist_provider/app/repositories/user/user_repository_impl.dart';
+import 'package:todolist_provider/app/repositories/user/user/user_repository.dart';
+import 'package:todolist_provider/app/repositories/user/user/user_repository_impl.dart';
 import 'package:todolist_provider/app/services/user/user_service.dart';
 import 'package:todolist_provider/app/services/user/user_service_impl.dart';
 

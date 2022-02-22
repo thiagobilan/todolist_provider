@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:todolist_provider/app/repositories/user/user_repository.dart';
+import 'package:todolist_provider/app/repositories/user/user/user_repository.dart';
 
 import './user_service.dart';
 

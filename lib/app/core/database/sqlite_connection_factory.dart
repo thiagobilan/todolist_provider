@@ -19,14 +19,18 @@ class SqliteConnectionFactory {
   Future<Database> openConnection() async {
     var databasePath = await getDatabasesPath();
     var databasePathFinal = join(databasePath, _DATABASE_NAME);
-    _db ??= await _lock.synchronized(() async {
-      _db ??= await openDatabase(databasePathFinal,
-          version: _VERSION,
-          onConfigure: _onConfigure,
-          onCreate: _onCreate,
-          onUpgrade: _onUpgrade,
-          onDowngrade: _onDowngrade);
-    });
+    if (_db == null) {
+      await _lock.synchronized(() async {
+        if (_db == null) {
+          await openDatabase(databasePathFinal,
+              version: _VERSION,
+              onConfigure: _onConfigure,
+              onCreate: _onCreate,
+              onUpgrade: _onUpgrade,
+              onDowngrade: _onDowngrade);
+        }
+      });
+    }
     return _db!;
   }
 
