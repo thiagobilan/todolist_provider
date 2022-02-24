@@ -22,7 +22,7 @@ class SqliteConnectionFactory {
     if (_db == null) {
       await _lock.synchronized(() async {
         if (_db == null) {
-          await openDatabase(databasePathFinal,
+          _db = await openDatabase(databasePathFinal,
               version: _VERSION,
               onConfigure: _onConfigure,
               onCreate: _onCreate,

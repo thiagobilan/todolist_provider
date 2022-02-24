@@ -33,7 +33,7 @@
 /build/
 
 #GoogleFirebase
-google-services.json
+# google-services.json
 
 # Web related
 lib/generated_plugin_registrant.dart

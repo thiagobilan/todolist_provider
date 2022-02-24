@@ -41,61 +41,59 @@ class _TasksCreatePageState extends State<TasksCreatePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          actions: [
-            IconButton(
-              onPressed: () => Navigator.of(context).pop(),
-              icon: Icon(Icons.close, color: Colors.black),
-            ),
-          ],
-        ),
-        floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: context.primaryColor,
-          onPressed: () {
-            final formValid = _formKey.currentState?.validate() ?? false;
-            if (formValid) {
-              widget._controller.save(_descriptionEC.text);
-            }
-          },
-          label: const Text(
-            'Salvar Task',
-            style: TextStyle(fontWeight: FontWeight.bold),
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.of(context).pop(),
+            icon: Icon(Icons.close, color: Colors.black),
           ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: context.primaryColor,
+        onPressed: () {
+          final formValid = _formKey.currentState?.validate() ?? false;
+          if (formValid) {
+            widget._controller.save(_descriptionEC.text);
+          }
+        },
+        label: const Text(
+          'Salvar Task',
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        body: Form(
-          key: _formKey,
-          child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Criar Task',
-                    style: context.titleStyle.copyWith(fontSize: 20),
-                  ),
+      ),
+      body: Form(
+        key: _formKey,
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  'Criar Task',
+                  style: context.titleStyle.copyWith(fontSize: 20),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
-                TodoListField(
-                  label: '',
-                  controller: _descriptionEC,
-                  validator: Validatorless.required('Descrição Obrigatória.'),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                CalendarButton(),
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              TodoListField(
+                label: '',
+                controller: _descriptionEC,
+                validator: Validatorless.required('Descrição Obrigatória.'),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CalendarButton(),
+            ],
           ),
         ),
       ),
